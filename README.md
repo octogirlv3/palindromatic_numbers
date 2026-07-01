@@ -1,15 +1,23 @@
 # Palindromatic Sums
 
-The palindromic number 595 is interesting because it can be written as the sum of consecutive squares: 6^2 ... 12^2.
-
-There are exactly eleven palindromes below one-thousand that can be written as consecutive square sums, and the sum of these palindromes is 4164. Note that 1 = 0^2 + 1^2  has not been included as this problem is concerned with the squares of positive integers.
-
-Find the sum of all the numbers less than 10^8 that are both palindromic and can be written as the sum of consecutive squares.
+https://projecteuler.net/problem=125
 
 ## Notes
 
-I only used AI to setup my python environment. 
-I made the pseudocode myself. 
+I used AI to setup my python environment. 
+The rest was done myself. 
+It's taken me roughly over 2 hours so far. 
+
+### Improvements (not done due to time)
+
+There are improvements to be made, but due to time constraints, I'm happy to discuss in person. 
+I also feel this is best worked out on paper as well, which I didn't have time to do. 
+
+* I used combinatorials (repetition allowed, unordered) to check all ranges and windows. A better approach would be for no repetition allowed (and still unordered) that way there are less results. 
+*  Because we wanted to find all palindromatic sums under 10^8, I further limited the range so it didn't check beyond a reasonable number: and that was the square root of 10^8 which was 10000. Because 10000^2 = 100000000. This was just a high level assumption (and kind of an embarrassing one), and range and window can be limited much more deterministically, but I felt this was outside the scope of the task. 
+
+I'm happy to disucss further in person.
+
 
 ## Install
 
