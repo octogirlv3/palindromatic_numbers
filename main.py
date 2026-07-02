@@ -53,19 +53,19 @@ def main():
         for w in range(0, 100):
             # check all range and window combinations
             x = (r + w) ** 2
-            # print(f"Check range in window: {str(r)} {str(w)}")
-            # accumulate sum
-            total_sum = total_sum + x
 
-            if x <= palindrome_max_limit or total_sum <= palindrome_max_limit:
+            if total_sum + x <= palindrome_max_limit:
+                # accumulate sum
                 total_sum_user_friendly = total_sum_user_friendly + " + " + str(r + w) + "^2"
+                total_sum = total_sum + x
 
                 # Yes: check if palindrome (is_palindrome)
-                if is_palindrome(total_sum) == "true":
+                if is_palindrome(total_sum) == "true" and w != 0:
                     palindromes_list.append(total_sum)
                     # yes: print numbers to sum + palindrome
                     print("You found a palindrome! ", total_sum)
                     print("Sum: ", total_sum_user_friendly)
+                    print(f"Check range in window: {str(r)} {str(w)}")
                     print("\n\n")
             else:
                 break
