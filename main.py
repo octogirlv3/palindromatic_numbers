@@ -8,13 +8,22 @@ def is_palindrome(number):
     length = len(as_string)
     # print("check if palindrome: %", as_string)
 
-    if length > 2 and length % 2 != 0: # its an odd number
-        half = int((length / 2) - 0.5)
-        left = as_string[:half]
-        right = as_string[half + 1:length]
-    
-        if left == right[::-1]: # does first half equate to second half?
-            return "true"
+    if length > 1:
+        if length % 2 != 0:
+            half = int((length / 2) - 0.5)
+            left = as_string[:half]
+            right = as_string[half + 1:length]
+        
+            if left == right[::-1]: # does first half equate to second half?
+                return "true"
+        else:
+            half = int((length / 2))
+            left = as_string[:half]
+            right = as_string[half:length]
+        
+            if left == right[::-1]: # does first half equate to second half?
+                return "true"
+
     
     return "false"
 
