@@ -8,7 +8,7 @@ def is_palindrome(number):
     length = len(as_string)
     # print("check if palindrome: %", as_string)
 
-    if length > 1:
+    if length > 0:
         if length % 2 != 0:
             half = int((length / 2) - 0.5)
             left = as_string[:half]
@@ -16,6 +16,8 @@ def is_palindrome(number):
         
             if left == right[::-1]: # does first half equate to second half?
                 return "true"
+        elif length == 1:
+            return "true"
         else:
             half = int((length / 2))
             left = as_string[:half]
